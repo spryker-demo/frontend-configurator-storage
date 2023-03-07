@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<database xmlns="spryker:schema-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="zed" xsi:schemaLocation="spryker:schema-01 https://static.spryker.com/schema-01.xsd" namespace="Orm\Zed\FileManagerStorage\Persistence" package="src.Orm.Zed.FileManagerStorage.Persistence">
+
+    <table name="pyz_config_container_storage" identifierQuoting="true">
+        <column name="id_config_container_storage" type="integer" autoIncrement="true" primaryKey="true"/>
+        <column name="fk_config_container" type="VARCHAR"/>
+
+        <index name="spy_config_container_storage-fk_config_container">
+            <index-column name="fk_config_container"/>
+        </index>
+
+        <id-method-parameter value="spy_config_container_storage_pk_seq"/>
+
+        <behavior name="synchronization">
+            <parameter name="resource" value="config_container"/>
+            <parameter name="queue_group" value="sync.storage.config_container"/>
+            <parameter name="key_suffix_column" value="fk_config_container"/>
+        </behavior>
+    </table>
+</database>
