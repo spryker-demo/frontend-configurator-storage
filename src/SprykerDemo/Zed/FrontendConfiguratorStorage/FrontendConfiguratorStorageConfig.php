@@ -16,7 +16,7 @@ class FrontendConfiguratorStorageConfig extends AbstractBundleConfig
      *
      * @var string
      */
-    public const PUBLISH_CONFIG_CONTAINER = 'publish.config_container';
+    public const PUBLISH_FRONTEND_CONFIGURATOR = 'publish.frontend_configurator';
 
     /**
      * Specification:
@@ -26,7 +26,7 @@ class FrontendConfiguratorStorageConfig extends AbstractBundleConfig
      *
      * @var string
      */
-    public const CONFIG_CONTAINER_SYNC_STORAGE_QUEUE = 'sync.storage.config_container';
+    public const FRONTEND_CONFIGURATOR_SYNC_STORAGE_QUEUE = 'sync.storage.frontend_configurator';
 
 
     /**
@@ -34,9 +34,9 @@ class FrontendConfiguratorStorageConfig extends AbstractBundleConfig
      *
      * @return string|null
      */
-    public function getConfigContainerEventQueueName(): ?string
+    public function getFrontendConfiguratorEventQueueName(): ?string
     {
-        return static::PUBLISH_CONFIG_CONTAINER;
+        return static::PUBLISH_FRONTEND_CONFIGURATOR;
     }
 
 }

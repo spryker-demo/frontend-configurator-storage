@@ -6,20 +6,20 @@
           namespace="Orm\Zed\FrontendConfiguratorStorage\Persistence"
           package="src.Orm.Zed.FrontendConfiguratorStorage.Persistence">
 
-    <table name="pyz_config_container_storage" identifierQuoting="true">
-        <column name="id_config_container_storage" type="integer" autoIncrement="true" primaryKey="true"/>
-        <column name="fk_config_container" type="VARCHAR"/>
+    <table name="spy_frontend_configurator_storage" identifierQuoting="true">
+        <column name="id_frontend_configurator_storage" type="integer" autoIncrement="true" primaryKey="true"/>
+        <column name="fk_frontend_configurator" type="VARCHAR"/>
 
-        <index name="spy_config_container_storage-fk_config_container">
-            <index-column name="fk_config_container"/>
+        <index name="spy_frontend_configurator_storage-fk_frontend_configurator">
+            <index-column name="fk_frontend_configurator"/>
         </index>
 
-        <id-method-parameter value="spy_config_container_storage_pk_seq"/>
+        <id-method-parameter value="spy_frontend_configurator_storage_pk_seq"/>
 
         <behavior name="synchronization">
-            <parameter name="resource" value="config_container"/>
-            <parameter name="queue_group" value="sync.storage.config_container"/>
-            <parameter name="key_suffix_column" value="fk_config_container"/>
+            <parameter name="resource" value="frontend_configurator"/>
+            <parameter name="queue_group" value="sync.storage.frontend_configurator"/>
+            <parameter name="key_suffix_column" value="fk_frontend_configurator"/>
         </behavior>
     </table>
 </database>

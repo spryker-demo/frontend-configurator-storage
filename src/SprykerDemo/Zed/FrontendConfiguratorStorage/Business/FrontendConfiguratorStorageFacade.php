@@ -7,10 +7,8 @@
 
 namespace SprykerDemo\Zed\FrontendConfiguratorStorage\Business;
 
-use Orm\Zed\ConfigContainer\Persistence\PyzConfigContainer;
-use Orm\Zed\ConfigContainer\Persistence\PyzConfigContainerQuery;
-use Orm\Zed\FileManagerStorage\Persistence\PyzConfigContainerStorage;
-use Orm\Zed\FileManagerStorage\Persistence\PyzConfigContainerStorageQuery;
+use Orm\Zed\FrontendConfigurator\Persistence\SpyFrontendConfiguratorQuery;
+use Orm\Zed\FrontendConfiguratorStorage\Persistence\SpyFrontendConfiguratorStorageQuery;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 
 /**
@@ -20,11 +18,11 @@ class FrontendConfiguratorStorageFacade extends AbstractFacade implements Fronte
 {
     public function publish($configContainerIds)
     {
-        $antelopeEntity = PyzConfigContainerQuery::create()
+        $antelopeEntity = SpyFrontendConfiguratorQuery::create()
             ->filterByName('FRONTEND_CONFIG')
             ->findOne();
 
-        $searchEntity = PyzConfigContainerStorageQuery::create()
+        $searchEntity = SpyFrontendConfiguratorStorageQuery::create()
             ->filterByFkConfigContainer('FRONTEND_CONFIG')
             ->findOneOrCreate();
         $searchEntity->setFkConfigContainer('FRONTEND_CONFIG');
