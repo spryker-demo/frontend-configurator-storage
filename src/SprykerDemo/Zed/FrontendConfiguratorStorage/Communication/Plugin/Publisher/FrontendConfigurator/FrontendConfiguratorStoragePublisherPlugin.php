@@ -47,6 +47,7 @@ class FrontendConfiguratorStoragePublisherPlugin extends AbstractPlugin implemen
     {
         return [
             FrontendConfiguratorEvents::FRONTEND_CONFIGURATOR_PUBLISH,
+            FrontendConfiguratorEvents::ENTITY_SPY_FRONTEND_CONFIGURATOR_CREATE,
             FrontendConfiguratorEvents::ENTITY_SPY_FRONTEND_CONFIGURATOR_UPDATE,
         ];
     }
