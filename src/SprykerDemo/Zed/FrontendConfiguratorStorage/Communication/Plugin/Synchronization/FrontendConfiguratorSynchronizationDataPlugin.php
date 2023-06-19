@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Spryker Marketplace License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\MerchantStorage\Communication\Plugin\Synchronization;
+namespace SprykerDemo\Zed\FrontendConfiguratorStorage\Communication\Plugin\Synchronization;
 
 use Generated\Shared\Transfer\FilterTransfer;
 use Generated\Shared\Transfer\MerchantStorageCriteriaTransfer;
@@ -21,7 +21,7 @@ use Spryker\Zed\SynchronizationExtension\Dependency\Plugin\SynchronizationDataBu
  * @method \Spryker\Zed\MerchantStorage\MerchantStorageConfig getConfig()
  * @method \Spryker\Zed\MerchantStorage\Persistence\MerchantStorageRepositoryInterface getRepository()()
  */
-class MerchantSynchronizationDataPlugin extends AbstractPlugin implements SynchronizationDataBulkRepositoryPluginInterface
+class FrontendConfiguratorSynchronizationDataPlugin extends AbstractPlugin implements SynchronizationDataBulkRepositoryPluginInterface
 {
     /**
      * @uses \Propel\Runtime\ActiveQuery\Criteria::ASC
@@ -39,7 +39,7 @@ class MerchantSynchronizationDataPlugin extends AbstractPlugin implements Synchr
      */
     public function getResourceName(): string
     {
-        return MerchantStorageConfig::MERCHANT_RESOURCE_NAME;
+        return 'frontend_configurator';
     }
 
     /**
@@ -98,7 +98,7 @@ class MerchantSynchronizationDataPlugin extends AbstractPlugin implements Synchr
      */
     public function getQueueName(): string
     {
-        return MerchantStorageConfig::MERCHANT_SYNC_STORAGE_QUEUE;
+        return 'sync.storage.frontend_configurator';
     }
 
     /**
