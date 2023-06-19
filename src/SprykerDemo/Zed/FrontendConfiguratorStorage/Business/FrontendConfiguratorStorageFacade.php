@@ -16,17 +16,24 @@ use Spryker\Zed\Kernel\Business\AbstractFacade;
  */
 class FrontendConfiguratorStorageFacade extends AbstractFacade implements FrontendConfiguratorStorageFacadeInterface
 {
-    public function publish($configContainerIds)
+    public function publish($eventEntityTransfers)
     {
-        $antelopeEntity = SpyFrontendConfiguratorQuery::create()
-            ->filterByName('FRONTEND_CONFIG')
+        $keys = [];
+        foreach ($eventEntityTransfers as $eventTransfer) {
+            $keys[] = $eventTransfer->getId();
+        }
+
+        $keys =  array_unique($keys);
+
+        $frontendConfigurator = SpyFrontendConfiguratorQuery::create()
+            ->filterByName_In($keys)
             ->findOne();
 
         $searchEntity = SpyFrontendConfiguratorStorageQuery::create()
-            ->filterByFkConfigContainer('FRONTEND_CONFIG')
+            ->filterByFkFrontendConfigurator('FRONTEND_CONFIG')
             ->findOneOrCreate();
-        $searchEntity->setFkConfigContainer('FRONTEND_CONFIG');
-        $searchEntity->setData(['kk' => '32323']);
+        $searchEntity->setFkFrontendConfigurator('FRONTEND_CONFIG');
+        $searchEntity->setData(['kk' => $frontendConfigurator->toArray()]);
 
         $searchEntity->save();
     }
