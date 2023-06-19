@@ -33,7 +33,7 @@ class FrontendConfiguratorStorageFacade extends AbstractFacade implements Fronte
             ->filterByFkFrontendConfigurator('FRONTEND_CONFIG')
             ->findOneOrCreate();
         $searchEntity->setFkFrontendConfigurator('FRONTEND_CONFIG');
-        $searchEntity->setData(['kk' => $frontendConfigurator->toArray()]);
+        $searchEntity->setData([$frontendConfigurator->getData()]);
 
         $searchEntity->save();
     }
