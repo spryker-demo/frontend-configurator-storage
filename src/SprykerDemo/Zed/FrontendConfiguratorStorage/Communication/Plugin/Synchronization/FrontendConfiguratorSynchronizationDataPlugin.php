@@ -110,7 +110,7 @@ class FrontendConfiguratorSynchronizationDataPlugin extends AbstractPlugin imple
      */
     public function getSynchronizationQueuePoolName(): ?string
     {
-        return $this->getFactory()->getConfig()->getMerchantSynchronizationPoolName();
+        return null;
     }
 
     /**
