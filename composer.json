@@ -6,7 +6,7 @@
     "require": {
         "php": ">=8.0",
         "spryker/kernel": "^3.70.0",
-        "spryker/storage": "^3.20.0",
+        "spryker/storage": "^3.19.2",
         "spryker-demo/frontend-configurator": "* as 1.0.0"
     },
     "require-dev": {
