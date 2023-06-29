@@ -1,9 +1,9 @@
 <?php
 
 /**
-* Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
-* Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
-*/
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
 
 namespace SprykerDemo\Zed\FrontendConfiguratorStorage;
 
@@ -28,7 +28,6 @@ class FrontendConfiguratorStorageConfig extends AbstractBundleConfig
      */
     public const FRONTEND_CONFIGURATOR_SYNC_STORAGE_QUEUE = 'sync.storage.frontend_configurator';
 
-
     /**
      * @api
      *
@@ -38,5 +37,4 @@ class FrontendConfiguratorStorageConfig extends AbstractBundleConfig
     {
         return static::PUBLISH_FRONTEND_CONFIGURATOR;
     }
-
 }

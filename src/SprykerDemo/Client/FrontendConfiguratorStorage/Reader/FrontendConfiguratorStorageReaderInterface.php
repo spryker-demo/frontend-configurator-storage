@@ -5,19 +5,14 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerDemo\Client\FrontendConfiguratorStorage;
+namespace SprykerDemo\Client\FrontendConfiguratorStorage\Reader;
 
 use Generated\Shared\Transfer\ConfigContainerTransfer;
 
-interface FrontendConfiguratorStorageClientInterface
+interface FrontendConfiguratorStorageReaderInterface
 {
     /**
-     * Specification:
-     * - Retrieves frontend configuration from the storage.
-     *
-     * @api
-     *
      * @return \Generated\Shared\Transfer\ConfigContainerTransfer
      */
-    public function getFrontendConfigContainer(): ConfigContainerTransfer;
+    public function getFrontendConfiguration(): ConfigContainerTransfer;
 }

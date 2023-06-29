@@ -4,8 +4,10 @@
     "description": "FrontendConfiguratorStorage module",
     "license": "proprietary",
     "require": {
-        "php": ">=7.4",
-        "spryker/kernel": "^3.30.0"
+        "php": ">=8.0",
+        "spryker/kernel": "^3.70.0",
+        "spryker/storage": "^3.20.0",
+        "spryker-demo/frontend-configurator": "* as 1.0.0"
     },
     "require-dev": {
         "spryker/code-sniffer": "*",

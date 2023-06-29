@@ -2,26 +2,21 @@
 
 /**
  * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
- * Use of this software requires acceptance of the Spryker Marketplace License Agreement. See LICENSE file.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
 namespace SprykerDemo\Zed\FrontendConfiguratorStorage\Communication\Plugin\Publisher;
 
 use Generated\Shared\Transfer\FilterTransfer;
 use Generated\Shared\Transfer\MerchantCriteriaTransfer;
-use Orm\Zed\ConfigContainer\Persistence\Map\PyzConfigContainerTableMap;
-use Orm\Zed\FrontendConfiguratorStorage\Persistence\PyzConfigContainerStorageQuery;
-use Orm\Zed\Merchant\Persistence\Map\SpyMerchantTableMap;
-use Spryker\Shared\MerchantStorage\MerchantStorageConfig;
+use Orm\Zed\FrontendConfigurator\Persistence\Map\SpyFrontendConfiguratorTableMap;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
-use Spryker\Zed\Merchant\Dependency\MerchantEvents;
 use Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherTriggerPluginInterface;
 use SprykerDemo\Zed\FrontendConfigurator\Dependency\FrontendConfiguratorEvents;
 
 /**
  * @method \SprykerDemo\Zed\FrontendConfiguratorStorage\Business\FrontendConfiguratorStorageFacadeInterface getFacade()
  * @method \SprykerDemo\Zed\FrontendConfiguratorStorage\FrontendConfiguratorStorageConfig getConfig()
- * @method \SprykerDemo\Zed\FrontendConfiguratorStorage\Communication\FrontendConfiguratorStorageCommunicationFactory getFactory()
  */
 class FrontendConfiguratorPublisherTriggerPlugin extends AbstractPlugin implements PublisherTriggerPluginInterface
 {
@@ -79,7 +74,7 @@ class FrontendConfiguratorPublisherTriggerPlugin extends AbstractPlugin implemen
      */
     public function getIdColumnName(): ?string
     {
-        return PyzConfigContainerTableMap::COL_NAME;
+        return SpyFrontendConfiguratorTableMap::COL_NAME;
     }
 
     /**
@@ -91,7 +86,7 @@ class FrontendConfiguratorPublisherTriggerPlugin extends AbstractPlugin implemen
     protected function createFilterTransfer(int $offset, int $limit): FilterTransfer
     {
         return (new FilterTransfer())
-            ->setOrderBy(PyzConfigContainerTableMap::COL_NAME)
+            ->setOrderBy(SpyFrontendConfiguratorTableMap::COL_NAME)
             ->setOffset($offset)
             ->setLimit($limit);
     }
