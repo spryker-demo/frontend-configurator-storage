@@ -13,13 +13,6 @@ use SprykerDemo\Zed\FrontendConfiguratorStorage\Persistence\FrontendConfigurator
 class FrontendConfiguratorStorageWriter implements FrontendConfiguratorStorageWriterInterface
 {
     /**
-     * @uses \SprykerDemo\Zed\FrontendConfigurator\FrontendConfiguratorConfig::FRONTEND_CONFIG_CONTAINER_NAME
-     *
-     * @var string
-     */
-    protected const FK_FRONTEND_CONFIGURATOR = 'FRONTEND_CONFIG';
-
-    /**
      * @var \SprykerDemo\Zed\FrontendConfigurator\Business\FrontendConfiguratorFacadeInterface
      */
     protected FrontendConfiguratorFacadeInterface $frontendConfiguratorFacade;
@@ -46,7 +39,7 @@ class FrontendConfiguratorStorageWriter implements FrontendConfiguratorStorageWr
      */
     public function publish(): void
     {
-        $frontendConfigurator = $this->frontendConfiguratorFacade->getFrontendGuiConfigContainer();
-        $this->frontendConfiguratorStorageEntityManager->saveFrontendConfiguratorStorage($frontendConfigurator);
+        $frontendConfiguratorTransfer = $this->frontendConfiguratorFacade->getFrontendConfiguration();
+        $this->frontendConfiguratorStorageEntityManager->saveFrontendConfiguratorStorage($frontendConfiguratorTransfer);
     }
 }

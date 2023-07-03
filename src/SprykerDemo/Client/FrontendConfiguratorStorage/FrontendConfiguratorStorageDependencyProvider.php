@@ -25,7 +25,6 @@ class FrontendConfiguratorStorageDependencyProvider extends AbstractDependencyPr
      */
     public function provideServiceLayerDependencies(Container $container): Container
     {
-        $container = parent::provideServiceLayerDependencies($container);
         $container = $this->addStorageClient($container);
 
         return $container;

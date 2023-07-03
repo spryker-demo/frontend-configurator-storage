@@ -7,12 +7,12 @@
 
 namespace SprykerDemo\Client\FrontendConfiguratorStorage\Reader;
 
-use Generated\Shared\Transfer\ConfigContainerTransfer;
+use Generated\Shared\Transfer\FrontendConfiguratorTransfer;
 
 interface FrontendConfiguratorStorageReaderInterface
 {
     /**
-     * @return \Generated\Shared\Transfer\ConfigContainerTransfer
+     * @return \Generated\Shared\Transfer\FrontendConfiguratorTransfer
      */
-    public function getFrontendConfiguration(): ConfigContainerTransfer;
+    public function getFrontendConfiguration(): FrontendConfiguratorTransfer;
 }

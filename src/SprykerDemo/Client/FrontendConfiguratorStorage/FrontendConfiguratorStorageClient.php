@@ -7,7 +7,7 @@
 
 namespace SprykerDemo\Client\FrontendConfiguratorStorage;
 
-use Generated\Shared\Transfer\ConfigContainerTransfer;
+use Generated\Shared\Transfer\FrontendConfiguratorTransfer;
 use Spryker\Client\Kernel\AbstractClient;
 
 /**
@@ -20,9 +20,9 @@ class FrontendConfiguratorStorageClient extends AbstractClient implements Fronte
      *
      * @api
      *
-     * @return \Generated\Shared\Transfer\ConfigContainerTransfer
+     * @return \Generated\Shared\Transfer\FrontendConfiguratorTransfer
      */
-    public function getFrontendConfigContainer(): ConfigContainerTransfer
+    public function getFrontendConfiguration(): FrontendConfiguratorTransfer
     {
         return $this->getFactory()
             ->createFrontendConfiguratorStorageReader()

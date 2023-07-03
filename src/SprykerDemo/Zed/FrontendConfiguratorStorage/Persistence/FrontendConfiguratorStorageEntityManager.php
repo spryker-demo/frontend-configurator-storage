@@ -7,7 +7,7 @@
 
 namespace SprykerDemo\Zed\FrontendConfiguratorStorage\Persistence;
 
-use Generated\Shared\Transfer\ConfigContainerTransfer;
+use Generated\Shared\Transfer\FrontendConfiguratorTransfer;
 use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
 
 /**
@@ -16,26 +16,26 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
 class FrontendConfiguratorStorageEntityManager extends AbstractEntityManager implements FrontendConfiguratorStorageEntityManagerInterface
 {
     /**
-     * @uses \SprykerDemo\Zed\FrontendConfigurator\FrontendConfiguratorConfig::FRONTEND_CONFIG_CONTAINER_NAME
+     * @uses \SprykerDemo\Zed\FrontendConfigurator\FrontendConfiguratorConfig::FRONTEND_CONFIG_REDIS_KEY_SUFFIX
      *
      * @var string
      */
     protected const FK_FRONTEND_CONFIGURATOR = 'FRONTEND_CONFIG';
 
     /**
-     * @param \Generated\Shared\Transfer\ConfigContainerTransfer $configContainerTransfer
+     * @param \Generated\Shared\Transfer\FrontendConfiguratorTransfer $frontendConfiguratorTransfer
      *
      * @return void
      */
-    public function saveFrontendConfiguratorStorage(ConfigContainerTransfer $configContainerTransfer): void
+    public function saveFrontendConfiguratorStorage(FrontendConfiguratorTransfer $frontendConfiguratorTransfer): void
     {
-        $searchEntity = $this->getFactory()
+        $frontendConfiguratorStorageEntity = $this->getFactory()
             ->createFrontendConfiguratorStorageQuery()
             ->filterByFkFrontendConfigurator(static::FK_FRONTEND_CONFIGURATOR)
             ->findOneOrCreate();
-        $searchEntity->setFkFrontendConfigurator(static::FK_FRONTEND_CONFIGURATOR);
-        $searchEntity->setData($configContainerTransfer->getData());
+        $frontendConfiguratorStorageEntity->setFkFrontendConfigurator(static::FK_FRONTEND_CONFIGURATOR);
+        $frontendConfiguratorStorageEntity->setData($frontendConfiguratorTransfer->getData());
 
-        $searchEntity->save();
+        $frontendConfiguratorStorageEntity->save();
     }
 }

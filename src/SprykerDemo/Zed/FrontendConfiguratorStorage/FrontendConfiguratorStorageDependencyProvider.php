@@ -28,7 +28,6 @@ class FrontendConfiguratorStorageDependencyProvider extends AbstractBundleDepend
      */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
-        $container = parent::provideBusinessLayerDependencies($container);
         $container = $this->addFrontendConfiguratorFacade($container);
 
         return $container;

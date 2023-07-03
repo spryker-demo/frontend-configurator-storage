@@ -7,7 +7,7 @@
 
 namespace SprykerDemo\Client\FrontendConfiguratorStorage;
 
-use Generated\Shared\Transfer\ConfigContainerTransfer;
+use Generated\Shared\Transfer\FrontendConfiguratorTransfer;
 
 interface FrontendConfiguratorStorageClientInterface
 {
@@ -17,7 +17,7 @@ interface FrontendConfiguratorStorageClientInterface
      *
      * @api
      *
-     * @return \Generated\Shared\Transfer\ConfigContainerTransfer
+     * @return \Generated\Shared\Transfer\FrontendConfiguratorTransfer
      */
-    public function getFrontendConfigContainer(): ConfigContainerTransfer;
+    public function getFrontendConfiguration(): FrontendConfiguratorTransfer;
 }

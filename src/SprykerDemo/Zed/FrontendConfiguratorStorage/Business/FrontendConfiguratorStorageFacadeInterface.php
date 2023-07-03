@@ -9,4 +9,13 @@ namespace SprykerDemo\Zed\FrontendConfiguratorStorage\Business;
 
 interface FrontendConfiguratorStorageFacadeInterface
 {
+    /**
+     * Specification:
+     * - publishes frontend configuration to the storage.
+     *
+     * @api
+     *
+     * @return void
+     */
+    public function publish(): void;
 }

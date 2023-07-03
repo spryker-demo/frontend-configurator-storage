@@ -15,11 +15,5 @@
         </index>
 
         <id-method-parameter value="spy_frontend_configurator_storage_pk_seq"/>
-
-        <behavior name="synchronization">
-            <parameter name="resource" value="frontend_configurator"/>
-            <parameter name="queue_group" value="sync.storage.frontend_configurator"/>
-            <parameter name="key_suffix_column" value="fk_frontend_configurator"/>
-        </behavior>
     </table>
 </database>

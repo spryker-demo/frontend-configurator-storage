@@ -7,7 +7,7 @@
 
 namespace SprykerDemo\Client\FrontendConfiguratorStorage\Reader;
 
-use Generated\Shared\Transfer\ConfigContainerTransfer;
+use Generated\Shared\Transfer\FrontendConfiguratorTransfer;
 use Spryker\Client\Storage\StorageClientInterface;
 
 class FrontendConfiguratorStorageReader implements FrontendConfiguratorStorageReaderInterface
@@ -28,13 +28,13 @@ class FrontendConfiguratorStorageReader implements FrontendConfiguratorStorageRe
     }
 
     /**
-     * @return \Generated\Shared\Transfer\ConfigContainerTransfer
+     * @return \Generated\Shared\Transfer\FrontendConfiguratorTransfer
      */
-    public function getFrontendConfiguration(): ConfigContainerTransfer
+    public function getFrontendConfiguration(): FrontendConfiguratorTransfer
     {
         $frontendConfiguration = $this->storageClient->get(static::KEY_FRONTEND_CONFIGURATOR);
 
-        return (new ConfigContainerTransfer())
+        return (new FrontendConfiguratorTransfer())
             ->setData($frontendConfiguration);
     }
 }
