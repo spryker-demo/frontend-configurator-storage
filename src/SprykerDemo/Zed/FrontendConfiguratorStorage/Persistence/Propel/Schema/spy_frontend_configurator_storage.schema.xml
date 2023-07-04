@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
-<database xmlns="spryker:schema-01"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          name="zed"
-          xsi:schemaLocation="spryker:schema-01 https://static.spryker.com/schema-01.xsd"
-          namespace="Orm\Zed\FrontendConfiguratorStorage\Persistence"
-          package="src.Orm.Zed.FrontendConfiguratorStorage.Persistence">
+<database
+    xmlns="spryker:schema-01"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="zed"
+    xsi:schemaLocation="spryker:schema-01 https://static.spryker.com/schema-01.xsd"
+    namespace="Orm\Zed\FrontendConfiguratorStorage\Persistence"
+    package="src.Orm.Zed.FrontendConfiguratorStorage.Persistence"
+>
 
     <table name="spy_frontend_configurator_storage" identifierQuoting="true">
         <column name="id_frontend_configurator_storage" type="integer" autoIncrement="true" primaryKey="true"/>
