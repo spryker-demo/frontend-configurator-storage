@@ -81,7 +81,7 @@ class FrontendConfiguratorSynchronizationDataPlugin extends AbstractPlugin imple
      *
      * @api
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function getParams(): array
     {
