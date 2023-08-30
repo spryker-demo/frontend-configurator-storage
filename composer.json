@@ -9,6 +9,7 @@
         "spryker/kernel": "^3.70.0",
         "spryker/publisher-extension": "^1.0.0",
         "spryker/storage": "^3.19.2",
+        "spryker/synchronization-behavior": "^1.0.0",
         "spryker/synchronization-extension": "^1.2.0"
     },
     "require-dev": {
